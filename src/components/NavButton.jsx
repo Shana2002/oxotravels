@@ -3,7 +3,7 @@ import React from 'react'
 
 const NavButton = ({name,link}) => {
   return (
-    <Link href={name} className='text-white'>
+    <Link href={name} className=''>
         {name}
     </Link>
   )
