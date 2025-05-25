@@ -25,9 +25,11 @@ const TopNav = () => {
       <Logo scrolled={scrolled}/>
       <div className={`flex items-center justify-around gap-4 ${scrolled ? 'text-black' : 'text-white'}`}>
         <NavButton name={"Home"} />
-        <NavButton name={"Home"} />
-        <NavButton name={"Home"} />
-        <NavButton name={"Home"} />
+        <NavButton name={"About us"} />
+        <NavButton name={"Destinations"} />
+        <NavButton name={"Experciance"} />
+        <NavButton name={"Tours"} />
+        <NavButton name={"Contact us"} />
       </div>
       <button className={`px-3 py-2 rounded ${scrolled ? "bg-green-500 text-white":"bg-white text-black"}`}>Get Started</button>
     </nav>

@@ -55,7 +55,7 @@ const HeroLayout = () => {
       </AnimatePresence>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-30 rounded-b-4xl z-10"></div>
+      <div className="absolute inset-0 bg-black opacity-30 rounded-b-4xl z-10 overflow-hidden"></div>
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-6">

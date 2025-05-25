@@ -92,7 +92,7 @@ const AboutLayout = () => {
             transition={{duration:0.5}}
             src="/kesbewa.png"
             alt=""
-            className="absolute top-20 w-8/12 h-8/12 object-cover left-[-10vh]"
+            className="absolute top-20 w-10/12 h-8/12 object-cover left-[-10vh]"
           />
         </div>
       </div>
