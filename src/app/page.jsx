@@ -8,6 +8,7 @@ import HeroLayout from "@/layouts/HeroLayout"
 import AboutLayout from "@/layouts/AboutLayout"
 import DestinationLayout from "@/layouts/DestinationLayout"
 import ExperinceLayout from "@/layouts/ExperinceLayout"
+import ToursLayout from "@/layouts/ToursLayout"
 
 export default function LoginPage() {
   return (
@@ -17,6 +18,7 @@ export default function LoginPage() {
       <AboutLayout />
       <DestinationLayout />
       <ExperinceLayout />
+      <ToursLayout/>
     </div>
   )
 }
