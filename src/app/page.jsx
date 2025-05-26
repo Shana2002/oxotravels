@@ -7,6 +7,7 @@ import TopNav from "@/layouts/TopNav"
 import HeroLayout from "@/layouts/HeroLayout"
 import AboutLayout from "@/layouts/AboutLayout"
 import DestinationLayout from "@/layouts/DestinationLayout"
+import ExperinceLayout from "@/layouts/ExperinceLayout"
 
 export default function LoginPage() {
   return (
@@ -15,6 +16,7 @@ export default function LoginPage() {
       <HeroLayout />
       <AboutLayout />
       <DestinationLayout />
+      <ExperinceLayout />
     </div>
   )
 }
