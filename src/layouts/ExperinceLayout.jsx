@@ -78,7 +78,7 @@ const ExperinceLayout = () => {
   };
 
   return (
-    <div className="w-full h-[90vh] flex items-center px-[2vw] gap-5 relative">
+    <div className="w-full h-[180vh] lg:h-[90vh] flex lg:flex-row flex-col items-center px-[2vw] gap-5 relative py-2 ">
       <img
         src={background}
         alt=""
@@ -90,7 +90,7 @@ const ExperinceLayout = () => {
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
-        className="w-1/3 h-11/12 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-md p-5">
+        className="my-1 w-full lg:w-1/3 lg:h-11/12 h-2/12 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-md p-5">
         <h1 className="text-5xl font-bold text-white">Experiances</h1>
       </motion.div>
 
@@ -100,9 +100,9 @@ const ExperinceLayout = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="w-2/3 h-11/12 flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-md p-5"
+        className="lg:w-2/3 lg:h-11/12 h-10/12 flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-md p-5"
       >
-        <div className="w-full h-full grid grid-cols-4 grid-rows-2 gap-3">
+        <div className="w-full h-full grid lg:grid-cols-4 lg:grid-rows-2 grid-cols-1 gap-3">
           {data.map((d, i) => (
             <motion.div key={i} variants={cardVariants}>
               <ExperianceCard
