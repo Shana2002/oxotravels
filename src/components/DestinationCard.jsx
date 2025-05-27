@@ -1,8 +1,12 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-const DestinationCard = ({ title, image, description, price }) => {
+const DestinationCard = ({ title, image, description, price ,d=0.5 }) => {
   return (
-    <div
+    <motion.div
+      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: -100 }}
+      transition={{ duration: d }}
       className="w-full h-full rounded-3xl bg-cover bg-center relative overflow-hidden transition-transform duration-300 transform hover:scale-105 group"
       style={{ backgroundImage: `url(${image})` }}
     >
@@ -23,8 +27,8 @@ const DestinationCard = ({ title, image, description, price }) => {
           ${price}
         </p>
       </div>
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default DestinationCard
+export default DestinationCard;
