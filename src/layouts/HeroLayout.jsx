@@ -2,6 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroLayout = () => {
+  const  [scrolled,setScrolled] = useState(false);
+  useEffect(()=>{
+    const handleScroll = ()=>setScrolled(window.scrollY >20);
+
+    window.addEventListener("scroll",handleScroll);
+
+    return ()=> window.removeEventListener("scroll",handleScroll);
+  },[])
   const data = [
     {
       image: "/image.png",
@@ -50,13 +58,20 @@ const HeroLayout = () => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -20, opacity: 0.9 }}
           transition={{ duration: 0.8 }}
-          className="absolute w-full h-full object-cover rounded-b-4xl"
+          className={`absolute w-full h-full object-cover lg:rounded-b-4xl ${scrolled ?"rounded-b-4xl":""}`}
         />
       </AnimatePresence>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-30 rounded-b-4xl z-10 overflow-hidden"></div>
-
+      <AnimatePresence mode="wait">
+        <motion.div 
+        initial={{ x: 20, opacity: 0.9 }}
+        animate={{ x: 0, opacity: 0.3 }}
+        exit={{ x: -20, opacity: 0.9 }}
+        transition={{ duration: 0.8 }}
+         className={`absolute inset-0 bg-black opacity-30 lg:rounded-b-4xl z-10 overflow-hidden ${scrolled ?"rounded-b-4xl":""}`}></motion.div>
+      </AnimatePresence>
+      
       {/* Content */}
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-6">
         <AnimatePresence mode="wait">

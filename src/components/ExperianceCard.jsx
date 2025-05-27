@@ -8,7 +8,7 @@ const ExperianceCard = ({userImage,userName,message,onHover}) => {
             <h2>{userName}</h2>
         </div>
         <div className='lg:my-auto w-11/12 text-justify mx-auto'>
-          <p className='line-clamp-2'><span className='ml-2 text-2xl text-green-500'>"</span>{message}<span className='text-2xl text-green-500'>"</span></p>
+          <p className='line-clamp-2 lg:line-clamp-none'><span className='ml-2 text-2xl text-green-500'>"</span>{message}<span className='text-2xl text-green-500'>"</span></p>
         </div>
     </div>
   )
