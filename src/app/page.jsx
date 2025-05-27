@@ -9,6 +9,7 @@ import AboutLayout from "@/layouts/AboutLayout"
 import DestinationLayout from "@/layouts/DestinationLayout"
 import ExperinceLayout from "@/layouts/ExperinceLayout"
 import ToursLayout from "@/layouts/ToursLayout"
+import ContactUsLayout from "@/layouts/ContactUsLayout"
 
 export default function LoginPage() {
   return (
@@ -19,6 +20,7 @@ export default function LoginPage() {
       <DestinationLayout />
       <ExperinceLayout />
       <ToursLayout/>
+      <ContactUsLayout />
     </div>
   )
 }
