@@ -54,7 +54,7 @@ const DestinationLayout = () => {
     },
   ];
   return (
-    <div className="w-full h-[90vh] flex flex-col items-center px-[2vw]">
+    <div className="w-full lg:h-[90vh] h-[200vh] flex flex-col items-center px-[2vw]">
       <motion.h1
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
@@ -63,7 +63,7 @@ const DestinationLayout = () => {
       >
         Destination
       </motion.h1>
-      <div className="w-11/12 h-10/12 grid grid-cols-3 grid-rows-2 gap-5">
+      <div className="w-11/12 h-12/12 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5">
         {data.map((data, index) => (
           <DestinationCard
             d={0.5+index/10}
@@ -75,7 +75,7 @@ const DestinationLayout = () => {
           />
         ))}
       </div>
-      <button className="my-3 px-5 py-2 bg-green-300 rounded">Show All</button>
+      <button className="my-3 px-5 py-2 bg-green-500 rounded">Show All</button>
     </div>
   );
 };

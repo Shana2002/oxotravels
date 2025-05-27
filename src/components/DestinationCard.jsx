@@ -7,7 +7,7 @@ const DestinationCard = ({ title, image, description, price ,d=0.5 }) => {
       whileInView={{ opacity: 1, x: 0 }}
       initial={{ opacity: 0, x: -100 }}
       transition={{ duration: d }}
-      className="w-full h-full rounded-3xl bg-cover bg-center relative overflow-hidden transition-transform duration-300 transform hover:scale-105 group"
+      className="w-full lg:h-full rounded-3xl bg-cover bg-center relative overflow-hidden transition-transform duration-300 transform hover:scale-105 group"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Gradient Overlay */}
@@ -18,7 +18,7 @@ const DestinationCard = ({ title, image, description, price ,d=0.5 }) => {
         <h2 className="text-xl font-bold">{title}</h2>
 
         {/* Description: hidden by default, shown on hover */}
-        <p className="text-sm mt-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-24 group-hover:mt-2 line-clamp-2">
+        <p className="text-sm mt-1 lg:opacity-0 lg:max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-24 group-hover:mt-2 line-clamp-2">
           {description}
         </p>
 
