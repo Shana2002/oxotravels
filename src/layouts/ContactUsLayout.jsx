@@ -2,11 +2,12 @@ import Logo from '@/components/Logo'
 import React from 'react'
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import ContactUsForm from './ContactUsForm';
+import Footer from '@/components/Footer';
 
 const ContactUsLayout = () => {
   return (
-    <div className='w-full px-[2vw] h-full  flex flex-col'>
-        <div className="h-[70vh] flex gap-1 bg-[url('/image.png')] bg-cover bg-center">
+    <div className='w-full h-full  flex flex-col'>
+        <div className="h-[70vh] flex gap-1 bg-[url('/image.png')] px-[2vw] bg-cover bg-center">
             <div className='w-1/2 flex flex-col items-center justify-center'>
                 <Logo size='text-5xl' scrolled={true}/>
                 <div className='mt-4 flex items-center gap-5'>
@@ -20,6 +21,9 @@ const ContactUsLayout = () => {
                 <ContactUsForm />
             </div>
         </div>
+        <div>
+                <Footer />
+            </div>
     </div>
   )
 }
