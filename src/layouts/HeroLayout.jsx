@@ -69,11 +69,11 @@ const HeroLayout = () => {
         animate={{ x: 0, opacity: 0.3 }}
         exit={{ x: -20, opacity: 0.9 }}
         transition={{ duration: 0.8 }}
-         className={`absolute inset-0 bg-black opacity-30 lg:rounded-b-4xl z-10 overflow-hidden ${scrolled ?"rounded-b-4xl":""}`}></motion.div>
+         className={`absolute inset-0 bg-black opacity-50 lg:rounded-b-4xl z-10 overflow-hidden ${scrolled ?"rounded-b-4xl":""}`}></motion.div>
       </AnimatePresence>
       
       {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-6">
+      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -83,16 +83,20 @@ const HeroLayout = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center gap-6"
           >
-            <h1 className="text-white text-5xl font-bold">{data[index].title}</h1>
-            <p className="text-white max-w-2xl">{data[index].description}</p>
-            <button className="text-white border px-6 py-2 rounded-2xl border-white hover:bg-white hover:text-green-500 transition">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold hero-text">
+              {data[index].title}
+            </h1>
+            <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-lg sm:max-w-xl md:max-w-2xl hero-description">
+              {data[index].description}
+            </p>
+            <button className="text-white border px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base rounded-2xl border-white hover:bg-white hover:text-green-500 transition cursor-pointer">
               Get Started
             </button>
           </motion.div>
         </AnimatePresence>
 
         {/* Dots */}
-        <div className="flex gap-2 mt-6">
+        <div className="flex gap-2 mt-4 sm:mt-6">
           {data.map((_, i) => (
             <motion.div
               key={i}

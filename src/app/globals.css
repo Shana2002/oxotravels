@@ -1,3 +1,29 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+/* == HOVER EFFECTS == */
+/* globals.css */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width:0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::before {
+  width: 100%;
+}
+

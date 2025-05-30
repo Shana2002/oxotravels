@@ -14,69 +14,77 @@ const DestinationLayout = () => {
     },
     {
       id: 2,
-      title: "Sigiriya",
+      title: "Ella",
       image: "/image.png",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-      price: "200",
+        "Explore the serene hills of Ella with breathtaking views and refreshing hikes.",
+      price: "180",
     },
     {
       id: 3,
-      title: "Sigiriya",
+      title: "Mirissa",
       image: "/image.png",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-      price: "200",
+        "Relax on golden beaches and enjoy whale watching tours at Mirissa.",
+      price: "150",
     },
     {
-      id: 3,
-      title: "Sigiriya",
+      id: 4,
+      title: "Nuwara Eliya",
       image: "/image.png",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-      price: "200",
+        "Visit the cool hill station known as ‘Little England’ with its lush tea gardens.",
+      price: "220",
     },
     {
-      id: 3,
-      title: "Sigiriya",
+      id: 5,
+      title: "Galle",
       image: "/image.png",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-      price: "200",
+        "Discover the rich history of Galle Fort and its charming streets.",
+      price: "210",
     },
     {
-      id: 3,
-      title: "Sigiriya",
+      id: 6,
+      title: "Polonnaruwa",
       image: "/image.png",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-      price: "200",
+        "Step back in time with the ancient ruins and cultural heritage sites.",
+      price: "190",
     },
   ];
+
   return (
-    <div className="w-full lg:h-[90vh] h-[200vh] flex flex-col items-center px-[2vw]">
+    <section className="w-full max-w-[1200px] mx-auto px-6 py-12 flex flex-col items-center">
       <motion.h1
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-3 text-2xl font-bold"
+        className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-900"
       >
-        Destination
+        Top Destinations
       </motion.h1>
-      <div className="w-11/12 h-12/12 grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5">
-        {data.map((data, index) => (
+
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full">
+        {data.map((item, index) => (
           <DestinationCard
-            d={0.5+index/10}
-            key={index}
-            title={data.title}
-            image={data.image}
-            description={data.description}
-            price={data.price}
+            d={0.4 + index * 0.1}
+            key={item.id}
+            title={item.title}
+            image={item.image}
+            description={item.description}
+            price={item.price}
           />
         ))}
       </div>
-      <button className="my-3 px-5 py-2 bg-green-500 rounded">Show All</button>
-    </div>
+
+      <button
+        className="mt-12 px-12 py-3 bg-green-600 rounded-full text-white font-semibold shadow-md hover:bg-green-700 transition-colors duration-300"
+        aria-label="Show all destinations"
+      >
+        Show All
+      </button>
+    </section>
   );
 };
 
