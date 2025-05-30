@@ -68,7 +68,20 @@ const ExperinceLayout = () => {
   };
 
   return (
-    <div className="w-full h-[90vh] flex items-center px-[2vw] gap-5 relative">
+    <div
+      className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 lg:px-[2vw] py-10 gap-6 overflow-hidden text-white"
+      style={{
+        backgroundImage: "url('/imagebadulla.jpg')",
+        backgroundSize: `calc(100% + ${scrollY * 0.3}px) calc(100% + ${scrollY * 0.3}px)`,
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        transition: "background-size 0.3s ease-out",
+      }}
+    >
+      {/* Base dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#000c1aee] to-[#06244de0] z-[-1]" />
+
+      {/* Hovered background image with blending */}
       <img
         src={background}
         alt="background"
