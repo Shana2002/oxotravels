@@ -1,6 +1,7 @@
 import DestinationCard from "@/components/DestinationCard";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const DestinationLayout = () => {
   const data = [
@@ -15,7 +16,7 @@ const DestinationLayout = () => {
     {
       id: 2,
       title: "Ella",
-      image: "/image.png",
+      image: "/imagebadulla.jpg",
       description:
         "Explore the serene hills of Ella with breathtaking views and refreshing hikes.",
       price: "180",
@@ -23,7 +24,7 @@ const DestinationLayout = () => {
     {
       id: 3,
       title: "Mirissa",
-      image: "/image.png",
+      image: "https://assets.telegraphindia.com/telegraph/2023/Aug/1691497505_cms001.jpg",
       description:
         "Relax on golden beaches and enjoy whale watching tours at Mirissa.",
       price: "150",
@@ -31,7 +32,7 @@ const DestinationLayout = () => {
     {
       id: 4,
       title: "Nuwara Eliya",
-      image: "/image.png",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCyp1H59kF0IBtQpa5uIte4SqHZ6gNsuwplQ&s",
       description:
         "Visit the cool hill station known as ‘Little England’ with its lush tea gardens.",
       price: "220",
@@ -39,7 +40,7 @@ const DestinationLayout = () => {
     {
       id: 5,
       title: "Galle",
-      image: "/image.png",
+      image: "https://do6raq9h04ex.cloudfront.net/sites/8/2021/07/galle-fort-1050x700-1.jpg",
       description:
         "Discover the rich history of Galle Fort and its charming streets.",
       price: "210",
@@ -47,11 +48,11 @@ const DestinationLayout = () => {
     {
       id: 6,
       title: "Polonnaruwa",
-      image: "/image.png",
+      image: "https://www.bluelankatours.com/wp-content/uploads/2023/08/lankathilake.jpg",
       description:
         "Step back in time with the ancient ruins and cultural heritage sites.",
       price: "190",
-    },
+    }
   ];
 
   return (
@@ -78,12 +79,13 @@ const DestinationLayout = () => {
         ))}
       </div>
 
-      <button
+      <Link
+        href={"/destinations"}
         className="mt-12 px-12 py-3 bg-green-600 rounded-full text-white font-semibold shadow-md hover:bg-green-700 transition-colors duration-300"
         aria-label="Show all destinations"
       >
         Show All
-      </button>
+      </Link>
     </section>
   );
 };

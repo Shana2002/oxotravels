@@ -3,7 +3,7 @@ import React from 'react'
 
 const NavButton = ({name,link}) => {
   return (
-    <Link href={name} className='nav-link relative hover:text-green-500'>
+    <Link href={link || "#"} className='nav-link relative hover:text-green-500'>
         {name}
         
     </Link> 

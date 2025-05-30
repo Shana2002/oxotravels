@@ -5,13 +5,14 @@ import NavButton from '@/components/NavButton'
 import React, { useEffect, useState } from 'react'
 import { IoMenu } from "react-icons/io5";
 
-const TopNav = () => {
+const TopNav = ({isScroll}) => {
   const [scrolled, setScrolled] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
-
+  
   useEffect(() => {
+    if(isScroll) setScrolled(true);
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if(!isScroll) setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,13 +20,14 @@ const TopNav = () => {
   }, []);
 
   const navItems = [
-    "Home",
-    "About us",
-    "Destinations",
-    "Experience",
-    "Tours",
-    "Contact us"
+    { name: "Home", route: "#hero" },
+    { name: "About us", route: "#about" },
+    { name: "Destinations", route: "#destinations" },
+    { name: "Experience", route: "#experience" },
+    { name: "Tours", route: "#tours" },
+    { name: "Contact us", route: "#contact" }
   ];
+
 
   return (
     <nav className={`flex items-center justify-between px-[5vw] h-[10vh] fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
@@ -35,8 +37,8 @@ const TopNav = () => {
 
       {/* Desktop Nav */}
       <div className={`lg:flex items-center justify-around gap-15 font-semibold ${scrolled ? 'text-black' : 'text-white'} hidden`}>
-        {navItems.map((item, idx) => (
-          <NavButton key={idx} name={item} />
+        {navItems.map((item) => (
+          <NavButton key={item.name} name={item.name} link={item.route} />
         ))}
       </div>
 
@@ -68,9 +70,9 @@ const TopNav = () => {
       >
         {/* Nav Links */}
         <div className="flex flex-col gap-6 text-black mt-10 font-semibold">
-          {navItems.map((item, idx) => (
-           <NavButton key={idx} name={item} />
-          ))}
+          {navItems.map((item) => (
+          <NavButton key={item.name} name={item.name} link={item.route} />
+        ))}
         </div>
 
         {/* Get Started Button */}
