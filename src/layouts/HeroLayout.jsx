@@ -1,41 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const HeroLayout = () => {
-  const  [scrolled,setScrolled] = useState(false);
-  useEffect(()=>{
-    const handleScroll = ()=>setScrolled(window.scrollY >20);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    window.addEventListener("scroll",handleScroll);
-
-    return ()=> window.removeEventListener("scroll",handleScroll);
-  },[])
   const data = [
     {
       image: "/image.png",
       title: "Experience the Magic",
-      description: "From pristine beaches to lush mountains, experience a vibrant island full of culture, wildlife, and unforgettable memories."
+      description:
+        "From pristine beaches to lush mountains, experience a vibrant island full of culture, wildlife, and unforgettable memories.",
     },
     {
       image: "/imageanuradhapura.webp",
       title: "Discover Ancient Wonders",
-      description: "Step back in time and explore Sri Lanka’s UNESCO World Heritage Sites like Sigiriya, Anuradhapura, and Polonnaruwa."
+      description:
+        "Step back in time and explore Sri Lanka’s UNESCO World Heritage Sites like Sigiriya, Anuradhapura, and Polonnaruwa.",
     },
     {
       image: "/imageMirissa.jpg",
       title: "Paradise Beaches Await",
-      description: "Unwind on golden sands and swim in turquoise waters at stunning beaches like Mirissa, Unawatuna, and Trincomalee."
+      description:
+        "Unwind on golden sands and swim in turquoise waters at stunning beaches like Mirissa, Unawatuna, and Trincomalee.",
     },
     {
       image: "/imagebadulla.jpg",
       title: "Breathtaking Hill Country",
-      description: "Ride through misty mountains and tea plantations in Ella and Nuwara Eliya—Sri Lanka’s lush highland heart."
+      description:
+        "Ride through misty mountains and tea plantations in Ella and Nuwara Eliya—Sri Lanka’s lush highland heart.",
     },
     {
       image: "/imageyala.jpg",
       title: "Wild Encounters",
-      description: "Get close to nature with unforgettable safaris in Yala, Udawalawe, and Minneriya National Parks."
-    }
+      description:
+        "Get close to nature with unforgettable safaris in Yala, Udawalawe, and Minneriya National Parks.",
+    },
   ];
 
   const [index, setIndex] = useState(0);
@@ -49,60 +55,54 @@ const HeroLayout = () => {
 
   return (
     <div className="w-full h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={index}
-          src={data[index].image}
-          initial={{ x: 20, opacity: 0.9 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -20, opacity: 0.9 }}
-          transition={{ duration: 0.8 }}
-          className={`absolute w-full h-full object-cover lg:rounded-b-4xl ${scrolled ?"rounded-b-4xl":""}`}
-        />
-      </AnimatePresence>
-
-      {/* Overlay */}
-      <AnimatePresence mode="wait">
-        <motion.div 
-        initial={{ x: 20, opacity: 0.9 }}
-        animate={{ x: 0, opacity: 0.3 }}
-        exit={{ x: -20, opacity: 0.9 }}
-        transition={{ duration: 0.8 }}
-         className={`absolute inset-0 bg-black opacity-50 lg:rounded-b-4xl z-10 overflow-hidden ${scrolled ?"rounded-b-4xl":""}`}></motion.div>
-      </AnimatePresence>
-      
-      {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center gap-6"
+      {/* Image Carousel Container */}
+      <motion.div
+        className="flex w-full h-full"
+        style={{ width: `${data.length * 100}%` }}
+        animate={{ x: `-${index * 20}%` }}
+        transition={{ ease: "easeInOut", duration: 0.8 }}
+      >
+        {data.map((item, i) => (
+          <div
+            key={i}
+            className="w-full h-full flex-shrink-0 relative"
+            style={{ width: `${100 / data.length}%` }}
           >
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold hero-text">
-              {data[index].title}
-            </h1>
-            <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-lg sm:max-w-xl md:max-w-2xl hero-description">
-              {data[index].description}
-            </p>
-            <button className="text-white border px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base rounded-2xl border-white hover:bg-white hover:text-green-500 transition cursor-pointer">
-              Get Started
-            </button>
-          </motion.div>
-        </AnimatePresence>
+            <img
+              src={item.image}
+              className={`w-full h-full object-cover ${
+                scrolled ? "rounded-b-4xl" : ""
+              }`}
+              alt={`slide-${i}`}
+            />
+            <div className={`absolute inset-0 bg-black opacity-50 z-10 ${scrolled ? "rounded-b-4xl" : ""}`}></div>
+            {/* Text Content */}
+            <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12">
+              <div className="flex flex-col items-center gap-6">
+                <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold hero-text">
+                  {item.title}
+                </h1>
+                <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-lg sm:max-w-xl md:max-w-2xl hero-description">
+                  {item.description}
+                </p>
+                <button className="text-white border px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base rounded-2xl border-white hover:bg-white hover:text-green-500 transition cursor-pointer">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </motion.div>
 
-        {/* Dots */}
-        <div className="flex gap-2 mt-4 sm:mt-6">
+      {/* Dots */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-30">
+        <div className="flex gap-2">
           {data.map((_, i) => (
             <motion.div
               key={i}
               onClick={() => setIndex(i)}
               className={`w-3 h-3 rounded-full cursor-pointer ${
-                index === i ? 'bg-green-500 scale-110' : 'bg-white opacity-60'
+                index === i ? "bg-green-500 scale-110" : "bg-white opacity-60"
               }`}
               whileHover={{ scale: 1.3 }}
               transition={{ duration: 0.2 }}
