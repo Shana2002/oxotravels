@@ -20,9 +20,9 @@ const TopNav = ({isScroll}) => {
   }, []);
 
   const navItems = [
-    { name: "Home", route: "#hero" },
-    { name: "About us", route: "#about" },
-    { name: "Destinations", route: "#destinations" },
+    { name: "Home", route: "/#hero" },
+    { name: "About us", route: "/#about" },
+    { name: "Destinations", route: "/#destinations" },
     { name: "Experience", route: "#experience" },
     { name: "Tours", route: "#tours" },
     { name: "Contact us", route: "#contact" }

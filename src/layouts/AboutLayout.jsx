@@ -9,23 +9,23 @@ const AboutLayout = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-5 font-bold text-2xl text-center"
+        className="my-5 font-bold text-2xl text-center lg:text-4xl"
       >
         Explore the infinity
       </motion.h1>
-      <div className="w-full h-full px-[2vw] flex flex-col lg:flex-row">
+      <div className="w-full h-full px-[2vw] flex flex-col lg:flex-row ">
         <div className="w-full lg:w-7/12 relative">
           <img
             src="/image1.png"
             alt=""
             className="w-full h-full object-cover absolute left-0 top-0 "
           />
-          <div className="absolute top-0 left-0 w-full h-full">
+          <div className="w-full h-full object-cover ">
             <motion.h2
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="my-2 text-2xl"
+              className="my-2 text-2xl lg:text-3xl"
             >
               Welcome to Sri Lanks
             </motion.h2>
@@ -33,7 +33,7 @@ const AboutLayout = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold my-2"
+              className="text-3xl font-bold my-2 lg:text-4xl"
             >
               Ayubowan
             </motion.h3>
@@ -68,7 +68,7 @@ const AboutLayout = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-             className="flex w-11/12 mt-auto justify-around mx-auto flex-wrap gap-2">
+             className="grid grid-cols-3 w-10/12 mt-[4vh] gap-5">
               <IconCard text={"Relax on Golden Beaches"} icon={"/1.png"}/>
               <IconCard text={"Relax on Golden Beaches"} icon={"/1.png"}/>
               <IconCard text={"Relax on Golden Beaches"} icon={"/1.png"}/>
@@ -77,23 +77,34 @@ const AboutLayout = () => {
             </motion.div>
           </div>
         </div>
-        <div className="w-full bg-black h-1/2 lg:w-5/12 relative">
-          <motion.img
-            whileInView={{opacity:1,right:1}}
-            initial={{opacity:0,right:-100}}
-            transition={{duration:0.5}}
-            src="/corrol.png"
-            alt=""
-            className="object-cover w-10/12 h-11/12 rounded-4xl absolute top-0 right-0"
-          />
-          <motion.img
+        <div className="w-full h-1/2 lg:h-full lg:w-5/12 relative">
+          <div className="object-cover w-10/12 h-full  rounded-4xl absolute top-0 right-0 py-10" >
+            <motion.img
+              whileInView={{opacity:1,right:1}}
+              initial={{opacity:0,right:-100}}
+              transition={{duration:0.5}}
+              src="/corrol.png"
+              alt=""
+              className="h-full w-full object-cover rounded-4xl"
+            />
+          </div>
+          <motion.div 
             whileInView={{opacity:1,y:0}}
             initial={{opacity:0,y:+100}}
             transition={{duration:0.5}}
+            className="absolute top-20 w-12/12 h-12/12 object-cover left-0 lg:left-[-15vh] lg:top-[30vh] xl:left-[-40vh] xl:top-[10vh]">
+            <motion.img
             src="/kesbewa.png"
             alt=""
-            className="absolute top-20 w-10/12 h-8/12 object-cover left-[-10vh]"
+            className=""
+            animate={{ x: [0, 3, 0, -3, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           />
+          </motion.div>
         </div>
       </div>
     </div>
