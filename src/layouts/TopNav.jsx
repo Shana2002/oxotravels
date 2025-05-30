@@ -64,14 +64,14 @@ const TopNav = ({isScroll}) => {
 
       {/* Mobile Panel */}
       <div
-        className={`fixed top-0 right-0 h-screen w-10/12 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 lg:hidden flex flex-col p-6 ${
+        className={`fixed top-0 right-0 h-full w-10/12 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 lg:hidden flex flex-col p-6 ${
           showPanel ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Nav Links */}
         <div className="flex flex-col gap-6 text-black mt-10 font-semibold">
           {navItems.map((item) => (
-          <NavButton key={item.name} name={item.name} link={item.route} />
+          <NavButton key={item.name} name={item.name} link={item.route} onClick={() => setShowPanel(false)}/>
         ))}
         </div>
 
