@@ -5,53 +5,53 @@ import { motion } from 'framer-motion'
 const data = [
   {
     id: 1,
-    title: "Sigiriya",
+    title: "Sigiriya Lion Rock",
     image: "/image.png",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Climb the iconic Sigiriya Rock Fortress and explore ancient frescoes, royal gardens, and breathtaking panoramic views.",
+    price: "120",
   },
   {
     id: 2,
-    title: "Sigiriya",
-    image: "/image.png",
+    title: "Ella Scenic Adventure",
+    image: "/imagebadulla.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Experience the famous Nine Arch Bridge, Ella Rock hike, and fresh mountain atmosphere in Sri Lanka’s hill country.",
+    price: "150",
   },
   {
     id: 3,
-    title: "Sigiriya",
-    image: "/image.png",
+    title: "Kandy Cultural Tour",
+    image: "https://thatswhatshehad.com/wp-content/uploads/2018/07/chathura-anuradha-subasinghe-40uQmE9Zq8g-unsplash-1024x683.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Visit the Temple of the Tooth Relic, enjoy the vibrant cultural show, and explore beautiful lakeside views.",
+    price: "140",
   },
   {
     id: 4,
-    title: "Sigiriya",
-    image: "/image.png",
+    title: "Galle Dutch Fort Tour",
+    image: "https://do6raq9h04ex.cloudfront.net/sites/8/2021/07/galle-fort-1050x700-1.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Walk through the historic Galle Fort, admire colonial architecture, and relax by the stunning southern coastline.",
+    price: "110",
   },
   {
     id: 5,
-    title: "Sigiriya",
-    image: "/image.png",
+    title: "Mirissa Whale Watching",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJewuBOmrekGK9FL9IQg6QjD3sbBvV06qKXA&s",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Enjoy an early-morning boat journey to spot blue whales, dolphins, and other marine life in Mirissa.",
+    price: "180",
   },
   {
     id: 6,
-    title: "Sigiriya",
-    image: "/image.png",
+    title: "Yala Wildlife Safari",
+    image: "https://www.civitatis.com/f/sri-lanka/ella/safari-parque-yala-589x392.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum quae, doloremque exercitationem culpa deserunt maiores dolorum magni dicta debitis quam eaque laboriosam ipsam autem deleniti. Eligendi eius nesciunt veritatis!",
-    price: "200",
+      "Explore Yala National Park and experience close encounters with leopards, elephants, and diverse wildlife.",
+    price: "160",
   },
-]
+];
 
 const ToursLayout = () => {
   return (
